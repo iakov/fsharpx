@@ -1,0 +1,126 @@
+Mono JIT compiler version 2.10.8.1 (Debian 2.10.8.1-5ubuntu1)
+Copyright (C) 2002-2011 Novell, Inc, Xamarin, Inc and Contributors. www.mono-project.com
+	TLS:           __thread
+	SIGSEGV:       altstack
+	Notifications: epoll
+	Architecture:  amd64
+	Disabled:      none
+	Misc:          softdebug 
+	LLVM:          supported, not enabled.
+	GC:            Included Boehm (with typed GC and Parallel Mark)
+Seq vs OptimizedSeq performance ratio (Seq/OptimizedSeq stop time).
+Greater ratio is better (for OptimizedSeq). Must be at least > 1.2
+
+List (aka list<'a> aka FSharpList<T>)
+
+10 elements, 2000000 iterations
+Seq.exists          	2.4
+Seq.exists2         	2.9
+Seq.fold            	1.7
+Seq.forall          	2.2
+Seq.forall2         	3.1
+Seq.iter            	2.1
+Seq.iter2           	2.4
+Seq.nth             	1.6
+Seq.tryPick         	2.3
+Total Seq vs OptimizedSeq: 10102ms vs 4379ms
+
+10000 elements, 2000 iterations
+Seq.exists          	3.7
+Seq.exists2         	7.7
+Seq.fold            	3.1
+Seq.forall          	4.3
+Seq.forall2         	7.7
+Seq.iter            	2.3
+Seq.iter2           	3.7
+Seq.nth             	1.5
+Seq.tryPick         	4.3
+Total Seq vs OptimizedSeq: 4220ms vs 1088ms
+
+10000000 elements, 2 iterations
+Seq.exists          	2.4
+Seq.exists2         	4.8
+Seq.fold            	2.9
+Seq.forall          	2.4
+Seq.forall2         	4.8
+Seq.iter            	2.2
+Seq.iter2           	3.1
+Seq.nth             	1.1
+Seq.tryPick         	2.4
+Total Seq vs OptimizedSeq: 4490ms vs 1637ms
+
+ResizeArray (aka System.Collections.Generic.List<T>)
+
+10 elements, 2000000 iterations
+Seq.exists          	2.1
+Seq.exists2         	2.1
+Seq.fold            	1.7
+Seq.forall          	2.4
+Seq.forall2         	2.4
+Seq.iter            	1.4
+Seq.iter2           	2.6
+Seq.nth             	2.1
+Seq.tryPick         	1.9
+Total Seq vs OptimizedSeq: 11021ms vs 5219ms
+
+10000 elements, 2000 iterations
+Seq.exists          	2.5
+Seq.exists2         	2.1
+Seq.fold            	1.6
+Seq.forall          	2.7
+Seq.forall2         	2.1
+Seq.iter            	2.4
+Seq.iter2           	3.4
+Seq.nth             	Infinity
+Seq.tryPick         	2.7
+Total Seq vs OptimizedSeq: 4642ms vs 1863ms
+
+10000000 elements, 2 iterations
+Seq.exists          	2.5
+Seq.exists2         	2.1
+Seq.fold            	1.4
+Seq.forall          	2.7
+Seq.forall2         	2.1
+Seq.iter            	2.4
+Seq.iter2           	3.5
+Seq.nth             	Infinity
+Seq.tryPick         	2.7
+Total Seq vs OptimizedSeq: 4641ms vs 1933ms
+
+Array
+
+10 elements, 2000000 iterations
+Seq.exists          	3.5
+Seq.exists2         	3.5
+Seq.fold            	2.5
+Seq.forall          	2.5
+Seq.forall2         	3.7
+Seq.iter            	2.8
+Seq.iter2           	2.6
+Seq.nth             	2
+Seq.tryPick         	3.3
+Total Seq vs OptimizedSeq: 10722ms vs 3626ms
+
+10000 elements, 2000 iterations
+Seq.exists          	4.6
+Seq.exists2         	11
+Seq.fold            	6.8
+Seq.forall          	5
+Seq.forall2         	11
+Seq.iter            	2.8
+Seq.iter2           	5.6
+Seq.nth             	Infinity
+Seq.tryPick         	4.7
+Total Seq vs OptimizedSeq: 5202ms vs 841ms
+
+10000000 elements, 2 iterations
+Seq.exists          	4.6
+Seq.exists2         	11
+Seq.fold            	6.6
+Seq.forall          	4.8
+Seq.forall2         	10
+Seq.iter            	2.8
+Seq.iter2           	5.5
+Seq.nth             	Infinity
+Seq.tryPick         	4.6
+Total Seq vs OptimizedSeq: 5155ms vs 848ms
