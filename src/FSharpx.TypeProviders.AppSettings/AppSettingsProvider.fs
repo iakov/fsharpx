@@ -35,6 +35,7 @@ let internal typedAppSettings (ownerType:TypeProviderForNamespaces) (cfg:TypePro
                 let typeDef = erasedType<obj> thisAssembly rootNamespace typeName
                 try
                     let filePath = findConfigFile cfg.ResolutionFolder configFileName
+                    watchForChanges ownerType filePath
                     let fileMap = ExeConfigurationFileMap(ExeConfigFilename=filePath)
                     let appSettings = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None).AppSettings.Settings
 
@@ -44,7 +45,7 @@ let internal typedAppSettings (ownerType:TypeProviderForNamespaces) (cfg:TypePro
                             | Int fieldValue ->    ProvidedLiteralField(niceName key, typeof<int>, fieldValue)
                             | Bool fieldValue ->   ProvidedLiteralField(niceName key, typeof<bool>, fieldValue)
                             | Double fieldValue -> ProvidedLiteralField(niceName key, typeof<float>, fieldValue)
-                            | fieldValue ->        ProvidedLiteralField(niceName key, typeof<obj>, fieldValue)
+                            | fieldValue ->        ProvidedLiteralField(niceName key, typeof<string>, fieldValue)
 
                         field.AddXmlDoc (sprintf "Returns the value from %s with key %s" configFileName key)
                         field.AddDefinitionLocation(1,1,configFileName)
@@ -63,7 +64,7 @@ let internal typedAppSettings (ownerType:TypeProviderForNamespaces) (cfg:TypePro
 type public FSharpxProvider(cfg:TypeProviderConfig) as this =
     inherit TypeProviderForNamespaces()
 
-    do this.AddNamespace(rootNamespace, [typedAppSettings this cfg])
+    do this.AddNamespace(rootNamespace,[typedAppSettings this cfg])
 
 [<TypeProviderAssembly>]
 do ()

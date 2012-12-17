@@ -48,6 +48,9 @@
     <Compile Include="..\FSharpx.TypeProviders\ProvidedTypes.fs">
       <Link>ProvidedTypes.fs</Link>
     </Compile>
+    <Compile Include="..\FSharpx.Core\Pluralizer.fs">
+      <Link>Pluralizer.fs</Link>
+    </Compile>
     <Compile Include="..\FSharpx.Core\Strings.fs">
       <Link>Strings.fs</Link>
     </Compile>
@@ -57,6 +60,7 @@
     <Compile Include="FileSystemProvider.fs" />
     <Compile Include="RegistryProvider.fs" />
     <Compile Include="SystemProvider.fs" />
+    <None Include="TestMachineProviders.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
