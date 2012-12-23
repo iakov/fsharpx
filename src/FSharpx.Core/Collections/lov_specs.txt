@@ -1,0 +1,4 @@
+Processor: Intel Core i5-2300
+Memory: 12272 MB (DDR3-1333 DDR3 SDRAM)
+OS: MS Windows 7 64 bit
+.NET Framework version: 4.0
