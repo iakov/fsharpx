@@ -99,6 +99,7 @@
     <Compile Include="Utilities.fs" />
     <Compile Include="LazyListTests.fs" />
     <Compile Include="ColllectionTests.fs" />
+    <Compile Include="OptimizedSeqTest.fs" />
     <Compile Include="ControlTests.fs" />
     <Compile Include="AsyncStreamReaderTest.fs" />
   </ItemGroup>
