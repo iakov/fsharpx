@@ -63,6 +63,7 @@
     <Compile Include="Collections\ByteString.fs" />
     <Compile Include="Collections\CircularBuffer.fs" />
     <Compile Include="Collections\NonEmptyList.fs" />
+    <Compile Include="Collections\OptimizedSeq.fs" />
     <Compile Include="ComputationExpressions\Monad.fs" />
     <Compile Include="ComputationExpressions\Continuation.fs" />
     <Compile Include="ComputationExpressions\Enumerator.fs" />
